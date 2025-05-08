@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening saytim</title>
+    <link rel="stylesheet" href="./stlye.css">
+</head>
+<body>
+   <button onclick="getlocation()">Mening joylashuvim</button>
+   <p id="getlocation"></p>
+
+   <script>
+    function getlocation(){
+        if(navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(function(postion){
+      document.getElementById("loction").innerHTML=
+      "Kenglik"+postion.coords.latitude+ "uzunlik"+postion.coords.latitude
+    })
+    }else{
+        document.getElementById("loction").innerHTML=
+        "Geolakatsiyani qo'lab quvatlamaydi"
+    }
+}
+   </script>
+    
+</body>
+</html>
